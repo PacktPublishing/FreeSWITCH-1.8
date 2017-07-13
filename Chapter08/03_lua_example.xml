@@ -1,0 +1,5 @@
+<extension name="XML IVR in Lua">
+  <condition field="destination_number" expression="^(9912)$">
+    <action application="lua" data="test9.lua"/>
+  </condition>
+</extension>

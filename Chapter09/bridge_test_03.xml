@@ -1,0 +1,6 @@
+<extension name="bridge_test_03">
+      <condition field="destination_number" expression="^2910$">
+        <action application="export" data="absolute_codec_string=PCMA,PCMU"/>
+        <action application="bridge" data="user/1011"/>
+      </condition>
+</extension>

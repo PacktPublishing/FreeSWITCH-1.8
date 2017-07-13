@@ -1,0 +1,7 @@
+
+ <extension name="check_caller_profile" continue="true">
+      <condition field="${myvariable}" expression="1234">
+            <action application="log" data="ERR myvariable exists and is 1234"/>
+            <anti-action application="log" data="ERR myvariable has NOT been set or is NOT 1234"/>
+      </condition>
+ </extension>`

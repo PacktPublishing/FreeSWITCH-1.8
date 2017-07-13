@@ -1,0 +1,9 @@
+<configuration name="xml_curl.conf" description="cURL XML Gateway">
+  <bindings> 
+    <binding name="localhostweb"> 
+        <param name="gateway-url" value="http://127.0.0.1:8888/xml_handler.php" bindings="directory"/>
+    <binding name="localhostweb2"> 
+        <param name="gateway-url" value="http://127.0.0.1:80/xml_handler.php" bindings="directory"/>
+    </binding>
+  </bindings>
+</configuration>

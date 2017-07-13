@@ -1,0 +1,9 @@
+<extension name="API">  
+      <condition field="destination_number" expression="^2913$">
+        <action application="log" data="ERR ${status()}"/>  
+        <action application="log" data="ERR ${sofia(status profile internal reg)}"/>
+        <action application="set" data="api_result=${unload(mod_verto)}"/>  
+        <action application="log" data="ERR ${module_exists(mod_verto)}"/>
+        <action application="log" data="ERR ${sofia_contact(${username}@$${domain_name})}"/>
+      </condition>  
+</extension>

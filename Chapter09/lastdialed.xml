@@ -1,0 +1,5 @@
+<extension name="LASTDIALED">
+      <condition field="destination_number" expression="^2916$">
+        <action application="log" data="ERR ${hash(select/${domain_name}-last_dial/${caller_id_number})}"/>
+      </condition>
+</extension>

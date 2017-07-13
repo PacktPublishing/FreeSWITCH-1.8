@@ -1,0 +1,26 @@
+<extension name="is_looking_for_2900" continue="true">
+  <condition field="destination_number" expression="^2900$" break="on-true">
+    <action application="log" data="WARNING first TRUE"/>
+    <anti-action application="log" data="ERR first FALSE"/>
+  </condition>
+  <condition field="destination_number" expression=".*">
+    <action application="log" data="WARNING second TRUE"/>
+    <action application="set" data="var01=value01" inline="true"/>
+    <action application="set" data="var02=value02"/>
+    <anti-action application="log" data="ERR second FALSE"/>
+  </condition>
+  <condition field="${var01}" expression="^value01$">
+    <action application="log" data="WARNING third TRUE"/>
+    <anti-action application="log" data="ERR third FALSE"/>
+  </condition>
+  <condition field="${var02}" expression="^value02$">
+    <action application="log" data="WARNING fourth TRUE"/>
+    <anti-action application="log" data="ERR fourth FALSE"/>
+  </condition>
+</extension>
+<extension name="after_is_looking_for_2900">
+  <condition field="destination_number" expression="^2900$">
+    <action application="log" data="WARNING first of after TRUE"/>
+    <anti-action application="log" data="ERR first of after FALSE"/>
+  </condition>
+</extension>

@@ -1,0 +1,11 @@
+<extension name="Regex OR example">
+  <condition regex="any">
+    <!-- If one is true then add actions in TODO-->
+    <regex field="caller_id_name" expression="Sara Adasi"/>
+    <regex field="caller_id_number" expression="^1001$"/>
+    <action application="log" data="WARNING At least one matched!"/>
+    <!-- If *none* are true then add anti-actions -->
+    <anti-action application="log" 
+      data="ERR Call is neither from Sara Adasi nor from 1001!"/>
+  </condition>
+</extension>

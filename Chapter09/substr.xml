@@ -1,0 +1,6 @@
+<extension name="SUBSTR">
+      <condition field="destination_number" expression="^2915$">
+        <action application="log" data="ERR ${username}"/>
+        <action application="log" data="ERR ${username:1:2}"/>
+      </condition>
+</extension>

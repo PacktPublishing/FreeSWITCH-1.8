@@ -1,0 +1,15 @@
+<extension name="check_var">
+  <condition field="destination_number" expression="^2902$">
+     <action application="set" data="var99=yes" inline="true"/>
+     <action application="set" data="var100=yes"/>
+     <action application="log" data="ERR var99=${var99} var100=${var100}"/>
+  </condition>
+  <condition field="${var99}" expression="yes">
+     <action application="log" data="ERR COND var99 TRUE var99=${var99} var100=${var100}"/>
+     <anti-action application="log" data="ERR COND var99 FALSE var99=${var99} var100=${var100}"/>
+  </condition>
+  <condition field="${var100}" expression="yes">
+     <action application="log" data="ERR COND var100 TRUE var99=${var99} var100=${var100}"/>
+     <anti-action application="log" data="ERR COND var100 FALSE var99=${var99} var100=${var100}"/>
+  </condition>
+</extension>

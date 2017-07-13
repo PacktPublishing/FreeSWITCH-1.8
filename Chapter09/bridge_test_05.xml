@@ -1,0 +1,6 @@
+<extension name="bridge_test_05">
+      <condition field="destination_number" expression="^2912$">
+        <action application="set" data="sip_h_X-AccountCode=4321"/>
+        <action application="bridge" data="sofia/gateway/gw03/2125551212"/>
+      </condition>
+</extension>

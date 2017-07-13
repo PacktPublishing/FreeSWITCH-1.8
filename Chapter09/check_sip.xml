@@ -1,0 +1,6 @@
+<extension name="check_sip" continue="true">
+   <condition field="source" expression="mod_sofia">
+         <action application="log" data="ERR YES, THIS CALL IS A SIP CALL"/>
+         <anti-action application="log" data="ERR NOPE, NOT A SIP CALL"/>
+   </condition>
+</extension>

@@ -1,0 +1,9 @@
+<extension name="check_global">
+  <condition field="destination_number" expression="^2906$">
+     <action application="set" data="var101=lab.opentelecomsolutions.com" inline="true"/>
+  </condition>
+  <condition field="${var101}" expression="$${domain_name}">
+     <action application="log" data="ERR YES, var101 is $${domain_name}"/>
+     <anti-action application="log" data="ERR NOPE, var101 is NOT $${domain_name}"/>
+  </condition>
+</extension>

@@ -1,0 +1,36 @@
+<extension name="nested_example">
+    <condition field="destination_number" expression="^2901$" require-nested="false">
+        <action application="log" data="ERR 00 CIDnum is ${caller_id_number} CIDname is ${caller_id_name}" />
+        <action application="set" data="var_01=N/A" inline="true"/>
+        <action application="set" data="var_02=N/A" inline="true"/>
+        <action application="set" data="var_03=N/A" inline="true"/>
+        <action application="set" data="var_04=N/A" inline="true"/>
+        <action application="set" data="var_05=N/A" inline="true"/>
+        <action application="log" data="ERR 01 I'm before..."/>
+        <action application="set" data="var_01=01" inline="true"/>
+        <action application="log" data="ERR 02 I'm before  ${var_01} ${var_02} ${var_03} ${var_04} ${var_05}"/>
+        <condition field="caller_id_number" expression="1011" break="on-false">
+            <action application="log" data="ERR 03 I'm the first..."/>
+            <action application="log" data="ERR 04 I'm the first CIDnum is ${caller_id_number}" />
+            <action application="set" data="var_02=02" inline="true"/>
+            <action application="log" data="ERR 05 I'm the first ${var_01} ${var_02} ${var_03} ${var_04} ${var_05}"/>
+        </condition>
+        <action application="log" data="ERR 06 I'm in between..."/>
+        <action application="set" data="var_03=03" inline="true"/>
+        <action application="log" data="ERR 07 I'm in between ${var_01} ${var_02} ${var_03} ${var_04} ${var_05}"/>
+        <condition field="${caller_id_name}" expression="Giovanni" break="on-false">
+            <action application="log" data="ERR 08 I'm the second..."/>
+            <action application="log" data="ERR 09 I'm the second CIDname is ${caller_id_name}" />
+            <action application="set" data="var_04=04" inline="true"/>
+            <action application="log" data="ERR 10 I'm the second ${var_01} ${var_02} ${var_03} ${var_04} ${var_05}"/>
+        </condition>
+        <action application="log" data="ERR 11 I'm after..."/>
+        <action application="set" data="var_05=05" inline="true"/>
+        <action application="log" data="ERR 12 I'm after ${var_01} ${var_02} ${var_03} ${var_04} ${var_05}"/>
+    </condition>
+</extension>
+<extension name="call_has_not_stopped_before_here">
+    <condition field="destination_number" expression=".*">
+        <action application="log" data="ERR NOT STOPPED BEFORE HERE"/>
+    </condition>
+</extension>

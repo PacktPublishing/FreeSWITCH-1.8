@@ -1,0 +1,56 @@
+<extension name="tod_example" continue="true" >
+  <condition wday="2-6" hour="9-18">
+    <action application="set" data="open=true"/>
+  </condition>
+</extension>
+
+<extension name="holiday_example" continue="true">
+  <condition mday="1" mon="1">
+    <!-- new year's day -->
+    <action application="set" data="open=false" inline="true"/>
+  </condition>
+  <condition wday="2" mweek="3" mon="1">
+    <!-- martin luther king day is the 3rd monday in january -->
+    <action application="set" data="open=false" inline="true"/>
+  </condition>
+  <condition wday="2" mweek="3" mon="2">
+    <!-- president's day is the 3rd monday in february -->
+    <action application="set" data="open=false" inline="true"/>
+  </condition>
+  <condition wday="2" mon="5" mday="25-31">
+    <!-- memorial day is the last monday in may (the only monday between the 25th and the 31st) -->
+    <action application="set" data="open=false" inline="true"/>
+  </condition>
+  <condition mday="4" mon="7">
+    <!-- independence day -->
+    <action application="set" data="open=false" inline="true"/>
+  </condition>
+  <condition wday="2" mday="1-7" mon="9">
+    <!-- labor day is the 1st monday in september (the only monday between the 1st and the 7th) -->
+    <action application="set" data="open=false" inline="true"/>
+  </condition>
+  <condition wday="2" mweek="2" mon="10">
+    <!-- columbus day is the 2nd monday in october -->
+    <action application="set" data="open=false" inline="true"/>
+  </condition>
+  <condition mday="11" mon="11">
+    <!-- veteran's day -->
+    <action application="set" data="open=false" inline="true"/>
+  </condition>
+  <condition wday="5-6" mweek="4" mon="11">
+    <!-- thanksgiving is the 4th thursday in november and usually there's an extension for black friday -->
+    <action application="set" data="open=false" inline="true"/>
+  </condition>
+  <condition mday="25" mon="12">
+    <!-- Christmas -->
+    <action application="set" data="open=false" inline="true"/>
+  </condition>
+</extension>
+
+<extension name="is_open_or_not">
+  <condition field="destination_number" expression="^2904$"/>
+  <condition field="${open}" expression="true">
+     <action application="log" data="ERR YES, WE'RE OPEN FOR BUSINESS"/>
+     <anti-action application="log" data="ERR GET A LIFE, DUDE, WE'RE CLOSED"/>
+  </condition>
+</extension>

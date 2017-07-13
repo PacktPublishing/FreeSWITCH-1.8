@@ -1,0 +1,118 @@
+<extension name="Test1">
+  <condition field="network_addr" 
+    expression="^192\.168\.1\.1$"/>
+  <condition field="destination_number" expression="^(\d+)$">
+    <action application="bridge" 
+      data="sofia/profilename/$1@192.168.2.2"/>
+  </condition>
+</extension>
+
+<extension name="Test1Wrong">
+  <condition field="destination_number" expression="^(\d+)$"/>
+  <condition field="network_addr"
+    expression="^192\.168\.1\.1$">
+    <action application="bridge" 
+      data="sofia/profilename/$1@192.168.2.2"/>
+  </condition>
+</extension>
+
+<extension name="Test1.2">
+  <condition field="destination_number" expression="^(\d+)$">
+    <action application="set" data="dialed_number=$1"/>
+  </condition>
+  <condition field="network_addr" 
+    expression="^192\.168\.1\.1$">
+    <action application="bridge"  
+      data="sofia/profile/${dialed_number}@192.168.2.2"/>
+  </condition>
+</extension>
+
+<extension name="Test2">
+  <condition field="network_addr"
+    expression="^192\.168\.1\.1$"/>
+  <condition field="destination_number" expression="^1(\d+)$">
+    <action application="bridge" 
+      data="sofia/profilename/$0@192.168.2.2"/>
+  </condition>
+</extension>
+
+<extension name="Test3.1">
+  <condition field="destination_number" 
+    expression="^00(\d+)$">
+    <action application="bridge" 
+      data="sofia/profilename/$1@192.168.2.2"/>
+  </condition>
+</extension>
+
+<extension name="Test3.2">
+  <condition field="destination_number" expression="^00(.+)$">
+    <action application="bridge" 
+      data="sofia/profilename/$1@192.168.2.2"/>
+  </condition>
+</extension>
+
+<extension name="Test4">
+  <condition field="destination_number" 
+    expression="^00(\d+)$">
+    <action application="bridge"  
+      data="sofia/profilename/011$1@x.x.x.x"/>
+  </condition>
+</extension>
+
+<extension name="internal">
+  <condition field="source" expression="mod_sofia"/>
+  <condition field="destination_number" expression="^(4\d+)$">
+    <action application="bridge"
+      data="sofia/local_profile/$0%example.com"/>
+  </condition>
+</extension>
+
+<extension name="find_me">
+  <condition field="destination_number" expression="^1111$">
+    <action application="set"
+      data="hangup_after_bridge=true"/>
+    <action application="set" data="continue_on_fail=true"/>
+    <action application="bridge"
+        data="sofia/local_profile/1111@example1.company.com"/>
+    <action application="bridge" 
+        data="sofia/local_profile/1111@example2.company.com"/>
+  </condition>
+</extension>
+
+<context name="public">
+   <extension name="test_did">
+     <condition field="destination_number"
+       expression="^\d{6}(\d{4})$">
+       <action application="transfer" data="$1 XML inhouse"/>
+     </condition>
+   </extension>
+</context>
+
+<extension name="officeA_outbound">
+  <condition field="caller_id_number" 
+             expression="^2\d{3}$"/>
+  <condition field="destination_number" 
+             expression="^(\d{10})$">
+      <action application="set" 
+        data="effective_caller_id_number=8001231234"/>
+      <action application="set" 
+        data="effective_caller_id_name=Office A"/>
+      <action application="bridge" 
+              data="sofia/gateway/myswitch.com/$1"/>
+  </condition>
+</extension>
+<extension name="officeB_outbound">
+  <condition field="caller_id_number" 
+             expression="^3\d{3}$"/>
+  <condition field="destination_number" 
+             expression="^(\d{10})$">
+      <action application="set" 
+         data="effective_caller_id_number=8001231235"/>
+      <action application="set" 
+         data="effective_caller_id_name=Office B"/>
+      <action application="bridge"  
+         data="sofia/gateway/otherswitch.com/$1"/>
+  </condition>
+</extension>
+
+

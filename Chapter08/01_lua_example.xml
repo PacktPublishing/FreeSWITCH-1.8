@@ -1,0 +1,5 @@
+<extension name="Simple Lua Test">
+  <condition field="destination_number" expression="^(9910)$">
+    <action application="lua" data="test3.lua"/>
+  </condition>
+</extension>

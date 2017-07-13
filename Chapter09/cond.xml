@@ -1,0 +1,5 @@
+<extension name="COND">
+      <condition field="destination_number" expression="^2914$">  
+        <action application="log" data="ERR ${cond(${username} == 1011 ? YESSSS : NOOOOT)}"/>
+      </condition>
+</extension>

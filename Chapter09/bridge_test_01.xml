@@ -1,0 +1,5 @@
+<extension name="bridge_test_02">
+      <condition field="destination_number" expression="^2908$">
+        <action application="bridge"  data="{codec_string='PCMA,PCMU,VP8'}user/1011"/>
+      </condition>
+</extension>
