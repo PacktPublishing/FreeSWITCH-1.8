@@ -1,0 +1,4 @@
+tcpdump -nq -s 0 -i eth0 -w /tmp/dump.pcap
+
+tcpdump -nq -s 0 -i eth0 -w /tmp/dump.pcap port 5060
+
