@@ -1,5 +1,5 @@
-# FreeSWITCH 1.6/1.8 - Second Edition
-This is the code repository for [FreeSWITCH 1.6/1.8 - Second Edition](https://www.packtpub.com/networking-and-servers/freeswitch-1618-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781785889134), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the book from start to finish.
+# FreeSWITCH 1.8
+This is the code repository for [FreeSWITCH 1.8](https://www.packtpub.com/networking-and-servers/freeswitch-1618-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781785889134), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the book from start to finish.
 ## About the Book
 FreeSWITCH is an open source telephony platform designed to facilitate the creation of voice and chat-driven products, scaling from a soft-phone to a PBX and even up to an enterprise-class soft-switch. This book introduces FreeSWITCH to IT professionals who want to build their own telephony system.
 
