@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<include>
+  <context name="public">
+
+    <extension name="demo">
+      <condition field="to" expression="^(3\d{3})@.*$">
+	<action application="info"/>
+	<action application="set" data="to=${to_user}-${to_host}"/>
+	<action application="set" data="dest_proto=conf"/>
+	<action application="set" data="chat_proto=conf"/>
+	<action application="set" data="skip_global_process=true"/>
+	<action application="set" data="from=${from_user}"/>
+	<action application="set" data="final_delivery=true"/>
+	<action application="set" data="from_full=<sip:${from_user}@${from_host}>"/>
+	<action application="info"/>
+	<action application="send"/>
+	<action application="stop"/>
+	<action application="info"/>
+      </condition>
+    </extension>
+
+  </context>
+</include>

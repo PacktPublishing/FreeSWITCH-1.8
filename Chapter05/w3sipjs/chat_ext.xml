@@ -1,0 +1,7 @@
+<!-- at beginning -->
+    <extension name="chat1" continue="true">
+      <condition field="${source}" expression="^mod_sofia$">
+        <action application="set" data="chat_proto=sip"/>
+      </condition>
+    </extension>
+

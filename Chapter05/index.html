@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other
+head content must come *after* these tags -->
+<meta name="description" content="A WebRTC client for Verto FreeSWITCH module">
+<meta name="author" content="Giovanni Maruzzelli">
+<link rel="icon" href="favicon.ico">
+<title>WebRTC Rooms</title>
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="high.css" rel="stylesheet">
+</head>
+<body>
+<div id="conference">
+<input type="hidden" id="passwd" value="mysecretpassword_LOL" />
+<input type="hidden" id="cidnumber" value="WebRTC" />
+<div class="form-signin">
+<h2 class="form-signin-heading">WebRTC Rooms</h2>
+<div id="content" class="form-signin-content">
+<input type=number id="login" min=1000 max=1019 step=1 class="form-control" placeholder="Login with a Number between 1000 and 1019" required autofocus>
+<button class="btn btn-lg btn-primary btn-success" data-inline="true" id="loginbtn">Login</button>
+<input id="ext" class="form-control" placeholder="Insert the Extension to Call or Wait to be Called" required autofocus>
+<button class="btn btn-lg btn-primary btn-success" data-inline="true" id="callbtn">Call</button>
+<button class="btn btn-lg btn-primary btn-danger" data-inline="true" id="backbtn">Back</button>
+</div>
+<div id="video1" align="center" class="embed-responsive embed-responsive-4by3">
+<video id="webcam" autoplay="autoplay" class="embed-responsive-item"> </video>
+</div>
+<button class="btn btn-lg btn-primary btn-danger" data-inline="true" id="hupbtn">Hangup</button>
+<br id="br" />
+<textarea id="chatwin" class="form-control" rows="5" readonly></textarea>
+<br id="br" />
+<input id="chatmsg" class="form-control" rows="1" placeholder="type here your chat msg" autofocus></input>
+<button class="btn btn-primary btn-success" data-inline="true" id="chatsend">Send Msg</button>
+</div>
+<div align="center" class="inner">
+<p>2017<br/>Giovanni Maruzzelli - OpenTelecom.IT</p>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript"
+src="js/jquery.json-2.4.min.js"></script>
+<script type="text/javascript" src="js/verto-min.js"></script>
+<script type="text/javascript" src="js/md5.js"></script>
+<script type="text/javascript" src="high2.js"></script>
+</body>
+</html>

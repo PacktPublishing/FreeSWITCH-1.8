@@ -1,0 +1,66 @@
+<extension name="giovanni_01">
+	<condition field="destination_number" expression="^290864$">
+		<action application="answer"/>
+		<action application="log" data="WARNING the value of current_application channel variable is: ${current_application}"/>
+		<action application="hangup"/>
+	</condition>
+</extension>
+
+<extension name="giovanni_02">
+	<condition field="destination_number" expression="^290864$">
+		<action application="answer"/>
+		<action application="log" data="WARNING the value of current_application channel variable is: ${current_application}"/>
+		<action application="log" data="WARNING the value of giovanni_nice_guy channel variable is: ||${giovanni_nice_guy}||"/>
+		<action application="set" data="giovanni_nice_guy=verymuch"/>
+		<action application="log" data="WARNING the value of giovanni_nice_guy channel variable is: ||${giovanni_nice_guy}||"/>
+		<action application="hangup"/>
+	</condition>
+</extension>
+
+<extension name="giovanni_03">
+	<condition field="destination_number" expression="^(1234)$">
+		<action application="log" data="WARNING this is $1"/>
+	</condition>
+</extension>
+
+<extension name="giovanni_04">
+	<condition field="destination_number" expression="^1800(\d{3})(\d{2}).*$">
+		<action application="answer"/>  
+		<action application="log" data="WARNING this is $1 and this is $2"/>
+		<action application="hangup"/>
+	</condition>
+</extension>
+
+<extension name="giovanni_05">
+	<condition field="destination_number" expression="^4321$">
+		<action application="answer"/>  
+		<action application="log" data="WARNING YESSSSS"/>
+		<anti-action application="log" data="WARNING NOOOOOOOOT"/>
+		<action application="hangup"/>
+	</condition>
+</extension>
+
+
+<extension name="giovanni_06">
+	<condition field="destination_number" expression="^4321$">
+		<action application="answer"/>  
+		<action application="set" data="myvariable=abc"/>  
+	</condition>
+	<condition field="${myvariable}" expression="abc">
+		<action application="log" data="WARNING YESSSSS"/>
+		<anti-action application="log" data="WARNING NOOOOOOOOT"/>
+	</condition>
+</extension>
+
+<extension name="giovanni_07">
+	<condition field="destination_number" expression="^4321$">
+		<action application="answer"/>  
+		<action application="set" data="myvariable=abc" inline="true"/>  
+	</condition>
+	<condition field="${myvariable}" expression="abc">
+		<action application="log" data="WARNING YESSSSS"/>
+		<anti-action application="log" data="WARNING NOOOOOOOOT"/>
+	</condition>
+</extension>
+
+
