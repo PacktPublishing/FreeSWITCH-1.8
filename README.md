@@ -29,5 +29,3 @@ At the very least you will need a computer on which you can run FreeSWITCH. Typi
 
 * [FreeSWITCH 1.0.6](https://www.packtpub.com/networking-and-servers/freeswitch-106?utm_source=github&utm_medium=repository&utm_campaign=9781847199966)
 
-### Suggestions and Feedback
-[Click here](https://docs.google.com/forms/d/e/1FAIpQLSe5qwunkGf6PUvzPirPDtuy1Du5Rlzew23UBp2S-P3wB-GcwQ/viewform) if you have any feedback or suggestions.
