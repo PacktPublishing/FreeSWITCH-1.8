@@ -29,3 +29,7 @@ At the very least you will need a computer on which you can run FreeSWITCH. Typi
 
 * [FreeSWITCH 1.0.6](https://www.packtpub.com/networking-and-servers/freeswitch-106?utm_source=github&utm_medium=repository&utm_campaign=9781847199966)
 
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781785889134">https://packt.link/free-ebook/9781785889134 </a> </p>
